@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ Productivity Dashboard</h1>
+            <p>Your personal assistant for a productive day</p>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- Clock & Date Card -->
+            <div class="card">
+                <div class="card-title">⏰ Time & Date</div>
+                <div class="clock-display">
+                    <div class="time" id="clock">00:00:00</div>
+                    <div class="date" id="date">Loading...</div>
+                    <div class="day" id="day">Loading...</div>
+                </div>
+            </div>
+
+            <!-- Weather Card -->
+            <div class="card">
+                <div class="card-title">🌤️ Weather</div>
+                <div class="weather-content" id="weatherContent">
+                    <div class="weather-loading">Loading weather data...</div>
+                </div>
+            </div>
+
+            <!-- Quote Card -->
+            <div class="card">
+                <div class="card-title">💡 Daily Inspiration</div>
+                <div class="quote-content">
+                    <div>
+                        <div class="quote-text" id="quoteText">Loading your daily inspiration...</div>
+                        <div class="quote-author" id="quoteAuthor">— Author</div>
+                    </div>
+                    <button class="quote-btn" onclick="fetchQuote()">New Quote</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Todo List Card -->
+        <div class="card">
+            <div class="card-title">✅ My Tasks</div>
+            <div class="todo-input-group">
+                <input 
+                    type="text" 
+                    class="todo-input" 
+                    id="todoInput" 
+                    placeholder="Add a new task..."
+                    onkeypress="handleKeyPress(event)"
+                >
+                <button class="todo-btn" onclick="addTodo()">Add Task</button>
+            </div>
+            <div class="todo-list" id="todoList">
+                <div class="empty-state">
+                    <div class="empty-state-icon">📝</div>
+                    <p>No tasks yet. Add one to get started!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
