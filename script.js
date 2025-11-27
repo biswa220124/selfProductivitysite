@@ -34,11 +34,11 @@ async function fetchWeather() {
         },
         () => {
           // Default to New York if location denied
-          getWeatherData(40.7128, -74.006)
+          getWeatherData(28.6139, -77.2088)
         },
       )
     } else {
-      getWeatherData(40.7128, -74.006)
+      getWeatherData(28.6139, -77.2088)
     }
   } catch (error) {
     console.error("Weather error:", error)
@@ -48,7 +48,6 @@ async function fetchWeather() {
 
 async function getWeatherData(lat, lon) {
   try {
-    // Using Open-Meteo API (free, no API key required)
     const response = await fetch(
       `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m&temperature_unit=fahrenheit`,
     )
