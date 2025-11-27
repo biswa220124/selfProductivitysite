@@ -33,7 +33,7 @@ async function fetchWeather() {
           await getWeatherData(latitude, longitude)
         },
         () => {
-          // Default to New York if location denied
+          // Default to New Delhi if location denied
           getWeatherData(28.6139, -77.2088)
         },
       )
